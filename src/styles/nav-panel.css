@@ -1,0 +1,27 @@
+#nav-panel {
+  grid-column: 1;
+  background-color: var(--penumbra);
+  border-style: none;
+  border-radius: 3vh;
+  width: 100%;
+  height: auto;
+}
+
+.nav-panel-item {
+  flex-direction: column;
+  border-style: none;
+  background-color: var(--eros);
+  color: var(--vesta);
+  height: 2vh;
+  border-radius: 2vh;
+  padding: 2% 2% 2% 2%;
+  text-align: center;
+  font-size: 2vh;
+  transition: background-color .5s;
+  margin-bottom: 1vh;
+}
+
+.nav-panel-item:hover {
+  background-color: var(--proto);
+  transition: .5s;
+}

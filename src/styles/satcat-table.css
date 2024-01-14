@@ -1,0 +1,90 @@
+#sat-table {
+  grid-column-start: 2;
+  border-radius: 3vh;
+  background-color: var(--eros);
+  flex-direction: column;
+  width: 100%;
+  margin-left: 2%;
+  padding: 2% 2% 2% 2%;
+  border-collapse: collapse;
+}
+
+#sat-table tr {
+  height: 2vh;
+  border-color: var(--ceres);
+  border-style: solid;
+  border-top: 1px solid var(--ceres);
+  border-bottom: 1px solid var(--ceres);
+  border-left: none;
+  border-right: none;
+  width: 97%;
+}
+
+#sat-table tr:not(:first-child):hover{
+  background-color: var(--palas);
+}
+
+#sat-table tr:first-child{
+  border-top: none;
+}
+
+#sat-table tr:last-child{
+  border-bottom: none;
+}
+
+tr:hover td#US, tr:hover td#CIS, tr:hover td#PRC, tr:hover td#PAYLOAD {
+  background-color: var(--palas);
+  border-radius: 0;
+}
+
+#sat-table td {
+  font-size: 100%;
+  text-align: center;
+  width: 25%;
+  padding-top: .25%;
+  padding-bottom: .25%;
+}
+
+#sat-table th {
+  font-size: 100%;
+  height: 100%;
+  padding: 1% 1% 1% 1%;
+  text-align: center;
+  width: 25%;
+}
+
+#sat-table input {
+  border-radius: 3vh;
+  background-color: var(--vesta);
+  border-style: none;
+  font-size: 2vh;
+  color: var(--umbra);
+  height: 100%;
+  text-align: center;
+}
+
+#sat-table select {
+  border-radius: 3vh;
+  background-color: var(--vesta);
+  border-style: solid;
+  font-size: 2vh;
+  color: var(--umbra);
+  height: 100%;
+  text-align: center;
+  margin: 0 1% 0 1%;
+}
+
+td#US {
+  background-color: rgba(4, 37, 108, 0.584);
+  border-radius: 3vh;
+}
+
+td#CIS, td#PRC{
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 3vh;
+}
+
+td#PAYLOAD {
+  background-color: rgba(0, 255, 0, 0.25);
+  border-radius: 3vh;
+}

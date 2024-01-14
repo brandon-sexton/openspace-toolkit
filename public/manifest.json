@@ -1,0 +1,13 @@
+{
+  "short_name": "UFO",
+  "name": "Utilities for Operators",
+  "icons": [
+    {
+      "src": "images/cancel.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}
