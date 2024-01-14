@@ -5,8 +5,7 @@
     },
     "extends": [
         "react-app",
-        "react-app/jest",
-        "google"
+        "react-app/jest"
       ],
     "parserOptions": {
         "ecmaVersion": "latest",
