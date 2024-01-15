@@ -94,8 +94,8 @@ class SatIncFilter extends Component {
   render() {
     return (
       <div display="flex">
-        <input type="number" id="sat-inc-min" placeholder="Inclination" onChange={this.checkInputTimer}></input>
-        <input type="number" id="sat-inc-max" placeholder="Inclination" onChange={this.checkInputTimer}></input>
+        <input type="number" id="sat-inc-min" placeholder="Min" onChange={this.checkInputTimer}></input>
+        <input type="number" id="sat-inc-max" placeholder="Max" onChange={this.checkInputTimer}></input>
       </div>
     );
   }
