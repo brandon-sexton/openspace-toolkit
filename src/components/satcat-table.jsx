@@ -7,7 +7,11 @@ let satcat = await SatCat.fromURL(process.env.PUBLIC_URL + "/satcat.json");
 class SatCountryCell extends Component {
   render() {
     return (
-      <td id={this.props.country}>{this.props.country}</td>
+      <td id={this.props.country}>
+        <div className="country-cell">
+          {this.props.country}
+        </div>
+      </td>
     );
   }
 }
@@ -15,7 +19,11 @@ class SatCountryCell extends Component {
 class SatTypeCell extends Component {
   render() {
     return (
-      <td id={this.props.type}>{this.props.type}</td>
+      <td id={this.props.type}>
+        <div className="type-cell">
+          {this.props.type}
+        </div>
+      </td>
     );
   }
 }
@@ -76,6 +84,31 @@ class SatIdFilter extends Component {
   }
 }
 
+class SatIncFilter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputTimer: null
+    };
+  }
+  render() {
+    return (
+      <div display="flex">
+        <input type="number" id="sat-inc-min" placeholder="Inclination" onChange={this.checkInputTimer}></input>
+        <input type="number" id="sat-inc-max" placeholder="Inclination" onChange={this.checkInputTimer}></input>
+      </div>
+    );
+  }
+
+  checkInputTimer = () => {
+    clearTimeout(this.state.inputTimer);
+    this.inputTimer = setTimeout(() => {
+      this.props.onChange();
+    }
+    , 1000);
+  }
+}
+
 class SatTypeFilter extends Component {
   render() {
     return (
@@ -115,7 +148,9 @@ export class SatCatTable extends Component {
       filterSatNoradId: "",
       filterSatName: "",
       filterSatCountry: "",
-      filterSatType: ""
+      filterSatType: "",
+      filterSatIncMin: "",
+      filterSatIncMax: ""
     };
   }
 
@@ -137,6 +172,9 @@ export class SatCatTable extends Component {
             <th>
               <SatTypeFilter onChange={this.handleFilterChange}/>
             </th>
+            <th>
+              <SatIncFilter onChange={this.handleFilterChange}/>
+            </th>
           </tr>
           {this.getTableRows()}
         </tbody>
@@ -149,7 +187,9 @@ export class SatCatTable extends Component {
       filterSatName: document.getElementById("sat-name-input").value,
       filterSatNoradId: document.getElementById("sat-norad-input").value,
       filterSatCountry: document.getElementById("sat-country-select").value,
-      filterSatType: document.getElementById("sat-type-select").value
+      filterSatType: document.getElementById("sat-type-select").value,
+      filterSatIncMin: document.getElementById("sat-inc-min").value,
+      filterSatIncMax: document.getElementById("sat-inc-max").value
     }, () => {
     });
   }
@@ -166,6 +206,9 @@ export class SatCatTable extends Component {
     if (this.state.filterSatType !== "") {
       afterFilters = afterFilters.filterByTypes([this.state.filterSatType]);
     }
+    if (this.state.filterSatIncMin !== "" && this.state.filterSatIncMax !== "") {
+      afterFilters = afterFilters.filterByInclinationRange(this.state.filterSatIncMin, this.state.filterSatIncMax);
+    }
 
     return afterFilters.map((sat, index) => (
       <tr key={index}>
@@ -173,6 +216,7 @@ export class SatCatTable extends Component {
         <td>{sat.NORAD_CAT_ID}</td>
         <SatCountryCell country={sat.COUNTRY}/>
         <SatTypeCell type={sat.OBJECT_TYPE}/>
+        <td>{sat.INCLINATION}</td>
       </tr>
     ));
   }

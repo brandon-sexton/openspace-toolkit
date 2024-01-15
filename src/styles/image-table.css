@@ -2,12 +2,13 @@
   grid-column-start: 2;
   border-radius: 3vh;
   font-size: 3vh;
-  background-color: var(--eros);
+  background-color: var(--dark);
   flex-direction: column;
   width: 100%;
   margin-left: 2%;
   padding: 2% 2% 2% 2%;
   border-collapse: collapse;
+  color: var(--light);
 }
 
 #img-table tr {
@@ -32,14 +33,15 @@
   padding: 1% 1% 1% 1%;
   text-align: center;
   width: 20%;
+  color: var(--light);
 }
 
 #add-img-button {
   border-radius: 3vh;
-  background-color: var(--ceres);
+  background-color: var(--medium);
   border-style: none;
   font-size: 2vh;
-  color: var(--umbra);
+  color: var(--dark);
   height: 100%;
   text-align: center;
   width: 100%;
@@ -47,12 +49,12 @@
 }
 
 #add-img-button:hover {
-  background-color: var(--neutral);
+  background-color: var(--primary);
   transition: .5s;
 }
 
 #cancel:hover {
-  background-color: var(--vesta);
+  background-color: var(--light);
   border-radius: 50%;
   transition: background-color .5s;
 }
@@ -66,16 +68,16 @@
 }
 
 #delete-img-button:hover {
-  background-color: var(--proto);
+  background-color: var(--primary);
   transition: background-color .5s;
 }
 
 #img-table input {
   border-radius: 3vh;
-  background-color: var(--vesta);
+  background-color: var(--light);
   border-style: none;
   font-size: 2vh;
-  color: var(--umbra);
+  color: var(--dark);
   height: 100%;
   text-align: center;
   width: 100%;
@@ -83,10 +85,10 @@
 
 #img-table select {
   border-radius: 3vh;
-  background-color: var(--vesta);
+  background-color: var(--light);
   border-style: solid;
   font-size: 2vh;
-  color: var(--umbra);
+  color: var(--dark);
   height: 100%;
   text-align: center;
   align-content: center;
@@ -95,10 +97,10 @@
 
 #export-button {
   border-radius: 3vh;
-  background-color: var(--eros);
+  background-color: var(--medium);
   border-style: none;
   font-size: 2vh;
-  color: var(--vesta);
+  color: var(--light);
   height: 3vh;
   text-align: center;
   width: 100%;
@@ -108,6 +110,6 @@
 }
 
 #export-button:hover {
-  background-color: var(--proto);
+  background-color: var(--primary);
   transition: .5s;
 }

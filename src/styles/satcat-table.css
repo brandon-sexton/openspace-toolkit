@@ -1,27 +1,28 @@
 #sat-table {
   grid-column-start: 2;
   border-radius: 3vh;
-  background-color: var(--eros);
+  background-color: var(--dark);
   flex-direction: column;
   width: 100%;
   margin-left: 2%;
   padding: 2% 2% 2% 2%;
   border-collapse: collapse;
+  color: var(--light);
 }
 
 #sat-table tr {
   height: 2vh;
-  border-color: var(--ceres);
-  border-style: solid;
-  border-top: 1px solid var(--ceres);
-  border-bottom: 1px solid var(--ceres);
+  border-color: var(--light);
+  border-style: none;
+  border-top: 1px solid var(--light);
+  border-bottom: 1px solid var(--light);
   border-left: none;
   border-right: none;
   width: 97%;
 }
 
 #sat-table tr:not(:first-child):hover{
-  background-color: var(--palas);
+  background-color: var(--primary);
 }
 
 #sat-table tr:first-child{
@@ -32,59 +33,100 @@
   border-bottom: none;
 }
 
-tr:hover td#US, tr:hover td#CIS, tr:hover td#PRC, tr:hover td#PAYLOAD {
-  background-color: var(--palas);
-  border-radius: 0;
-}
-
 #sat-table td {
   font-size: 100%;
   text-align: center;
-  width: 25%;
-  padding-top: .25%;
-  padding-bottom: .25%;
+  width: 19%;
+  padding-top: .5%;
+  padding-bottom: .5%;
 }
 
 #sat-table th {
-  font-size: 100%;
   height: 100%;
-  padding: 1% 1% 1% 1%;
+  padding-bottom: 1%;
   text-align: center;
-  width: 25%;
+  width: 19%;
 }
 
 #sat-table input {
   border-radius: 3vh;
-  background-color: var(--vesta);
+  background-color: var(--light);
   border-style: none;
   font-size: 2vh;
-  color: var(--umbra);
+  color: var(--dark);
   height: 100%;
+  width: 98%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  text-align: center;
+}
+
+#sat-table input[id="sat-inc-min"]{
+  border-top-left-radius: 3vh;
+  border-bottom-left-radius: 3vh;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: var(--light);
+  border-style: none;
+  border-right-style: solid;
+  font-size: 2vh;
+  color: var(--dark);
+  height: 100%;
+  width: 47%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  text-align: center;
+}
+#sat-table input[id="sat-inc-max"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3vh;
+  border-bottom-right-radius: 3vh;
+  background-color: var(--light);
+  border-style: none;
+  font-size: 2vh;
+  color: var(--dark);
+  height: 100%;
+  width: 47%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   text-align: center;
 }
 
 #sat-table select {
   border-radius: 3vh;
-  background-color: var(--vesta);
-  border-style: solid;
+  background-color: var(--light);
+  border-style: none;
   font-size: 2vh;
-  color: var(--umbra);
+  color: var(--dark);
   height: 100%;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   text-align: center;
-  margin: 0 1% 0 1%;
 }
 
-td#US {
-  background-color: rgba(4, 37, 108, 0.584);
+td#US div{
+  background-color: var(--blue-asset);
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
   border-radius: 3vh;
 }
 
-td#CIS, td#PRC{
-  background-color: rgba(255, 0, 0, 0.25);
+td#CIS div, td#PRC div{
+  background-color: var(--red-asset);
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
   border-radius: 3vh;
 }
 
-td#PAYLOAD {
-  background-color: rgba(0, 255, 0, 0.25);
+td#PAYLOAD div {
+  background-color: var(--success);
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
   border-radius: 3vh;
+  color: var(--dark);
 }

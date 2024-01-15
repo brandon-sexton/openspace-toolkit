@@ -1,29 +1,24 @@
 
 :root {
-  --umbra: #000000;
-  --penumbra: #191919;
-  --eros: #282828;
-  --ceres: #646464;
-  --palas: #9b9b9b;
-  --vesta: #f0f0f0;
-  --luna: #ffffff;
-  --proto: #ff6900;
-  --neutral: #8cff00;
+  --dark: #000000;
+  --medium: #696969;
+  --light: #d1d1d1;
+  --error: #dc3e04;
+  --success: #36dc04;
+  --primary: #aa04dc;
+  --secondary: #04a2dc;
+  --blue-asset: #0e15bc;
+  --red-asset: var(--error);
 }
 
-html {
-  margin: 2%;
+body {
+  background-color: var(--dark);
   font-family: Arial;
-  color: var(--vesta);
-  background-color: var(--penumbra);
 }
 
-div#app {
+.app-container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  background-color: var(--penumbra);
-}
-
-#test:empty {
-  background-color: red;
+  grid-template-columns: 1fr 4fr;
+  background-color: var(--dark);
+  padding: 2%;
 }

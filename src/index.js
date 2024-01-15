@@ -19,7 +19,7 @@ export default function App() {
 
 const root = createRoot(document.getElementById('app'));
 root.render(
-  <App />
+  <App class='app-container' />
 );
 
 // If you want to start measuring performance in your app, pass a function
