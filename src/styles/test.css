@@ -1,0 +1,61 @@
+
+:root {
+  --dark: #000000;
+  --medium: #696969;
+  --light: #d1d1d1;
+  --error: #dc3e04;
+  --success: #36dc04;
+  --primary: #aa04dc;
+  --secondary: #04a2dc;
+  --blue-asset: #0e15bc;
+  --red-asset: var(--error);
+}
+
+body {
+  background-color: var(--dark);
+  font-family: Arial;
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: 1fr 12fr 1fr;
+  background-color: var(--dark);
+  height: 100vh;
+}
+
+#nav-test {
+  grid-row-start: 1;
+  background-color: red;
+  border-style: none;
+  width: 100%;
+}
+
+#content-test {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-row-start: 2;
+  background-color: blue;
+  border-style: none;
+  width: 100%;
+}
+
+#chase-test {
+  grid-column-start: 1;
+  background-color: yellow;
+  border-style: none;
+  width: 100%;
+}
+
+#tgt-test {
+  grid-column-start: 3;
+  background-color: orange;
+  border-style: none;
+  width: 100%;
+}
+
+#footer-test {
+  grid-row-start: 3;
+  background-color: green;
+  border-style: none;
+  width: 100%;
+}

@@ -1,7 +1,7 @@
-import "../styles/nav-panel.css";
+import "./nav-bar.css";
 import React, { Component } from "react";
 
-export class NavPanel extends Component {
+export class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,9 +10,9 @@ export class NavPanel extends Component {
   }
   render() {
     return (
-      <nav id="nav-panel">
-        <div className="nav-panel-item" onClick={this.handleSatellitesClick}>Satellites</div>
-        <div className="nav-panel-item" onClick={this.handleImagingClick}>Imaging</div>
+      <nav>
+        <div className='nav-item' id='satcat' onClick={this.handleSatellitesClick}></div>
+        <div className='nav-item' id='imaging' onClick={this.handleImagingClick}></div>
       </nav>
     );
   }

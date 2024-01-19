@@ -1,12 +1,14 @@
 import React from "react";
-import { NavPanel } from "../components/nav-panel";
-import { SatCatTable } from "../components/satcat-table";
+import { NavBar } from "../components/nav-bar/nav-bar";
+import { SatQueryWidget } from "../components/sat-query-widget/sat-query-widget";
 
 function Home() {
   return (
     <React.StrictMode>
-      <NavPanel />
-      <SatCatTable />
+      <NavBar />
+      <div className="content">
+        <SatQueryWidget />
+      </div>
     </React.StrictMode>
   );
 }

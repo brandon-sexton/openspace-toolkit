@@ -14,11 +14,22 @@
 body {
   background-color: var(--dark);
   font-family: Arial;
+  margin: 0;
+  color: var(--light);
 }
 
 .app-container {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 5vh 90vh 5vh;
+  row-gap: 1vh;
   background-color: var(--dark);
-  padding: 2%;
+  height: 100vh;
 }
+
+.content {
+  grid-row-start: 2;
+  background-color: var(--dark);
+  border-style: none;
+  padding: 0 1vw 0 1vw;
+}
+

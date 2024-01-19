@@ -1,0 +1,39 @@
+nav {
+  grid-row-start: 1;
+  display: flex;
+  background-color: var(--dark);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: var(--medium) solid 1px;
+  padding: 1vh 1vh 1vh 1vh;
+  gap: 1vh;
+}
+
+.nav-item {
+  background-color: var(--dark);
+  border-style: solid;
+  border-color: transparent;
+  height: 100%;
+  width: 3vh;
+}
+
+.nav-item#satcat {
+  background-image: url(../../images/satcat-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nav-item#satcat:hover {
+  background-image: url(../../images/hover-satcat-icon.png);
+}
+
+.nav-item#imaging {
+  background-image: url(../../images/imaging-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.nav-item#imaging:hover {
+  background-image: url(../../images/hover-imaging-icon.png);
+}

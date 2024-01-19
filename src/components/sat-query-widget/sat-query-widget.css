@@ -1,0 +1,120 @@
+.sat-query-table {
+  grid-row-start: 2;
+  background-color: var(--dark);
+  width: 100%;
+  color: var(--light);
+}
+
+div#US{
+  background-color: var(--blue-asset);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
+  border-radius: 3vh;
+}
+
+div#CIS, div#PRC{
+  background-color: var(--red-asset);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
+  border-radius: 3vh;
+}
+
+div#PAYLOAD {
+  background-color: var(--success);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 2.5% 2.5% 2.5% 2.5%;
+  border-radius: 3vh;
+  color: var(--dark);
+}
+
+.sat-query-inputs {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr .5fr;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  column-gap: 2%;
+}
+
+.inc-range-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.inc-range-div input {
+  width: 50%;
+}
+
+.sat-query-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr .5fr;
+  column-gap: 2%;
+  text-align: center;
+  align-items: center;
+  height: 2%;
+  border-color: var(--light);
+  border-top: none;
+  border-bottom: 1px solid var(--light);
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+input {
+  background-color: var(--dark);
+  border-style: solid;
+  border-width: 1px;
+  font-size: 100%;
+  color: var(--light);
+  text-align: center;
+}
+
+select {
+  background-color: var(--dark);
+  border-style: solid;
+  border-width: 1px;
+  font-size: 100%;
+  color: var(--light);
+  text-align: center;
+}
+
+button {
+  background-color: var(--medium);
+  border-style: none;
+  border-radius: 3vh;
+  font-size: 100%;
+  color: var(--light);
+  text-align: center;
+  height: 100%;
+  transition: background-color .5s;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+button:hover {
+  background-color: var(--primary);
+  transition: .5s;
+}
+
+button#Active {
+  background-color: var(--secondary);
+  border-style: none;
+  border-radius: 3vh;
+  font-size: 100%;
+  color: var(--dark);
+  text-align: center;
+  height: 100%;
+  transition: background-color .5s;
+  padding-left: 1vw;
+  padding-right: 1vw
+}
+
+button#Active:hover {
+  background-color: var(--primary);
+  transition: .5s;
+}
