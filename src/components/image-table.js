@@ -6,7 +6,8 @@ export class ImageTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imgs: []
+      imgs: [],
+      validTargets: listValidTargets(props.satcat)
     };
   }
 
@@ -41,7 +42,13 @@ export class ImageTable extends Component {
             <tr>
               <td><input type="date" id="img-date"/></td>
               <td><input type="time" id="img-time" step="1" min="00:00:00" max="23:59:59"/></td>
-              <td><input type="text" id="img-tgt"/></td>
+              <td>
+                <select id="img-tgt">
+                  {this.state.validTargets.map((target, index) => (
+                    <option key={index} value={target}>{target}</option>
+                  ))}
+                </select>
+              </td>
               <td>
                 <select id="img-cam">
                   <option value="NFOV">NFOV</option>
@@ -99,4 +106,14 @@ async function handleExportButtonClick() {
   }
   await writable.write(JSON.stringify(imgs));
   await writable.close();
+}
+
+function listValidTargets(satcat) {
+  let validTargets = [];
+  satcat.forEach((sat) => {
+    if (sat.SCENARIO_STATUS === "Active") {
+      validTargets.push(sat.OBJECT_NAME);
+    }
+  });
+  return validTargets;
 }

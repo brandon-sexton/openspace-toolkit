@@ -109,8 +109,8 @@ export class SatQueryWidget extends Component {
 
   handleScenarioStatusChange = (event) => {
     const satNoradId = event.target.parentElement.children[1].innerHTML;
-    const satIndex = this.props.satcatsatcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
-    const sat = this.props.satcatsatcat[satIndex];
+    const satIndex = this.props.satcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
+    const sat = this.props.satcat[satIndex];
     if (sat.SCENARIO_STATUS === "Inactive") {
       sat.SCENARIO_STATUS = "Active";
     } else {
