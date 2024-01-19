@@ -4,7 +4,7 @@ import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import ImagingPage from './pages/Imaging';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {SatCat} from "otk-data-handlers"
 
@@ -23,12 +23,12 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route exact path="/imaging" element={<ImagingPage satcat={this.state.satcat} />} />
           <Route path="/" element={<Home satcat={this.state.satcat} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
