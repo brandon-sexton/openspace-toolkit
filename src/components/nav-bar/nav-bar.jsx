@@ -22,7 +22,7 @@ export class NavBar extends Component {
   }
 
   handleImagingClick = () => {
-    window.location.href="./#/imaging";
+    window.location.href="./imaging";
   }
 
 }
