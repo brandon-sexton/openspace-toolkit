@@ -1,11 +1,5 @@
 import "./sat-query-widget.css"
-import {SatCat} from "otk-data-handlers"
 import React, { Component } from "react";
-
-const satcat = await SatCat.fromURL(process.env.PUBLIC_URL + "/satcat.json");
-satcat.forEach((sat) => {
-  sat.SCENARIO_STATUS = "Inactive";
-});
 
 class SatCountryCell extends Component {
   render() {
@@ -91,7 +85,7 @@ export class SatQueryWidget extends Component {
     const satIncMax = document.getElementById("sat-inc-max").value;
     const satStatus = document.getElementById("sat-status-select").value;
 
-    let satResults = satcat.filterByStillOnOrbit();
+    let satResults = this.props.satcat.filterByStillOnOrbit();
     satResults = satResults.filterByNamePattern(satName);
     satResults = satResults.filterByNoradIdPattern(satNoradId)
     if (satCountry !== "" && satCountry !== "OTHER") {
@@ -115,8 +109,8 @@ export class SatQueryWidget extends Component {
 
   handleScenarioStatusChange = (event) => {
     const satNoradId = event.target.parentElement.children[1].innerHTML;
-    const satIndex = satcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
-    const sat = satcat[satIndex];
+    const satIndex = this.props.satcatsatcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
+    const sat = this.props.satcatsatcat[satIndex];
     if (sat.SCENARIO_STATUS === "Inactive") {
       sat.SCENARIO_STATUS = "Active";
     } else {
