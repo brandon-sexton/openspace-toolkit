@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import '../styles/image-table.css';
+import './image-schedule-widget.css';
+import globalSatCat from '../../../store/sat-cat-data/sat-cat-data';
 
-export class ImageTable extends Component {
+export class ImageScheduleWidget extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
       imgs: [],
-      validTargets: listValidTargets(props.satcat)
+      validTargets: listValidTargets()
     };
   }
 
@@ -32,7 +33,7 @@ export class ImageTable extends Component {
                 <td>
                   <
                     img 
-                    src={require('../images/cancel.png')} 
+                    src={require('../../../assets/action-icons/cancel-icon/cancel-icon.png')} 
                     alt="Cancel" id="cancel" 
                     onClick={() => this.handleDeleteButtonClick(index)}
                   ></img>
@@ -108,12 +109,11 @@ async function handleExportButtonClick() {
   await writable.close();
 }
 
-function listValidTargets(satcat) {
+function listValidTargets() {
   let validTargets = [];
-  satcat.forEach((sat) => {
-    if (sat.SCENARIO_STATUS === "Active") {
-      validTargets.push(sat.OBJECT_NAME);
-    }
+  const targetIndices = JSON.parse(window.localStorage.getItem('activeSatellites'));
+  targetIndices.forEach((index) => {
+    validTargets.push(globalSatCat[index].OBJECT_NAME);
   });
   return validTargets;
 }

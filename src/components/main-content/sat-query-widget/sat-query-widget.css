@@ -83,6 +83,7 @@ select {
   text-align: center;
 }
 
+
 button {
   background-color: var(--medium);
   border-style: none;
@@ -91,14 +92,12 @@ button {
   color: var(--light);
   text-align: center;
   height: 100%;
-  transition: background-color .5s;
   padding-left: 1vw;
   padding-right: 1vw;
 }
 
 button:hover {
   background-color: var(--primary);
-  transition: .5s;
 }
 
 button#Active {
@@ -109,12 +108,10 @@ button#Active {
   color: var(--dark);
   text-align: center;
   height: 100%;
-  transition: background-color .5s;
   padding-left: 1vw;
   padding-right: 1vw
 }
 
 button#Active:hover {
   background-color: var(--primary);
-  transition: .5s;
 }

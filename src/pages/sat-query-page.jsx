@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import { NavBar } from "../components/nav-bar/nav-bar";
-import { SatQueryWidget } from "../components/sat-query-widget/sat-query-widget";
+import { SatQueryWidget } from "../components/main-content/sat-query-widget/sat-query-widget";
 
-class Home extends Component {
+class SatQueryPage extends Component {
   render() {
     return (
       <React.StrictMode>
@@ -15,4 +15,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default SatQueryPage;

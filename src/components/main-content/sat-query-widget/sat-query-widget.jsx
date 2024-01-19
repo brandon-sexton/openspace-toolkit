@@ -1,3 +1,4 @@
+import globalSatCat from "../../../store/sat-cat-data/sat-cat-data";
 import "./sat-query-widget.css"
 import React, { Component } from "react";
 
@@ -27,7 +28,17 @@ export class SatQueryWidget extends Component {
     super(props);
     this.state = {
       queryResults: [],
+      satcat: globalSatCat,
     };
+  }
+
+  componentDidMount() {
+    const cachedSatellites = JSON.parse(localStorage.getItem("activeSatellites"));
+    cachedSatellites.forEach((satIndex) => {
+      globalSatCat[satIndex].SCENARIO_STATUS = "Active";
+    });
+    console.log(cachedSatellites)
+    this.setState({satcat: globalSatCat})
   }
 
   render() {
@@ -85,7 +96,7 @@ export class SatQueryWidget extends Component {
     const satIncMax = document.getElementById("sat-inc-max").value;
     const satStatus = document.getElementById("sat-status-select").value;
 
-    let satResults = this.props.satcat.filterByStillOnOrbit();
+    let satResults = this.state.satcat.filterByStillOnOrbit();
     satResults = satResults.filterByNamePattern(satName);
     satResults = satResults.filterByNoradIdPattern(satNoradId)
     if (satCountry !== "" && satCountry !== "OTHER") {
@@ -109,13 +120,22 @@ export class SatQueryWidget extends Component {
 
   handleScenarioStatusChange = (event) => {
     const satNoradId = event.target.parentElement.children[1].innerHTML;
-    const satIndex = this.props.satcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
-    const sat = this.props.satcat[satIndex];
+    const globalIndex = this.state.satcat.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
+    const sat = this.state.satcat[globalIndex];
     if (sat.SCENARIO_STATUS === "Inactive") {
       sat.SCENARIO_STATUS = "Active";
+      let cachedSatellites = JSON.parse(localStorage.getItem("activeSatellites"));
+      cachedSatellites.push(globalIndex);
+      localStorage.setItem("activeSatellites", JSON.stringify(cachedSatellites));
     } else {
-      sat.SCENARIO_STATUS = "Inactive";
+      sat.SCENARIO_STATUS = "Inactive"; 
+      let cachedSatellites = JSON.parse(localStorage.getItem("activeSatellites"));
+      const localIndex = cachedSatellites.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
+      cachedSatellites.splice(localIndex, 1);
+      localStorage.setItem("activeSatellites", JSON.stringify(cachedSatellites));
     }
+    const debug = JSON.parse(localStorage.getItem("activeSatellites"));
+    console.log(debug);
     const queryIndex = this.state.queryResults.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
     const querySat = this.state.queryResults[queryIndex];
     querySat.SCENARIO_STATUS = sat.SCENARIO_STATUS;

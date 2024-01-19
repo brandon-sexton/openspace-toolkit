@@ -1,32 +1,24 @@
 import React, {Component} from 'react';
 import { createRoot } from 'react-dom/client';
-import './styles/index.css';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './pages/Home';
-import ImagingPage from './pages/Imaging';
+import SatQueryPage from './pages/sat-query-page';
+import ImageSchedulePage from './pages/image-schedule-page';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
-import {SatCat} from "otk-data-handlers"
-
-const satcat = await SatCat.fromURL(process.env.PUBLIC_URL + "/satcat.json");
-satcat.forEach((sat) => {
-  sat.SCENARIO_STATUS = "Inactive";
-});
+const activeSatellites = JSON.parse(window.localStorage.getItem('activeSatellites'));
+if (activeSatellites === null) {
+  window.localStorage.setItem('activeSatellites', JSON.stringify([]));
+}
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      satcat: satcat,
-    }
-  }
 
   render() {
     return (
       <HashRouter>
         <Routes>
-          <Route exact path="/imaging" element={<ImagingPage satcat={this.state.satcat} />} />
-          <Route path="/" element={<Home satcat={this.state.satcat} />} />
+          <Route exact path="/imaging" element={<ImageSchedulePage />} />
+          <Route path="/" element={<SatQueryPage />} />
         </Routes>
       </HashRouter>
     );

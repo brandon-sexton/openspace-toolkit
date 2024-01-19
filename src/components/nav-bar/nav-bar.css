@@ -19,21 +19,21 @@ nav {
 }
 
 .nav-item#satcat {
-  background-image: url(../../images/satcat-icon.png);
+  background-image: url(../../assets/toolbar-icons/sat-query-icons/sat-query-icon.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .nav-item#satcat:hover {
-  background-image: url(../../images/hover-satcat-icon.png);
+  background-image: url(../../assets/toolbar-icons/sat-query-icons/sat-query-icon-hover.png);
 }
 
 .nav-item#imaging {
-  background-image: url(../../images/imaging-icon.png);
+  background-image: url(../../assets/toolbar-icons/image-schedule-icons/image-schedule-icon.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .nav-item#imaging:hover {
-  background-image: url(../../images/hover-imaging-icon.png);
+  background-image: url(../../assets/toolbar-icons/image-schedule-icons/image-schedule-icon-hover.png);
 }
