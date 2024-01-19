@@ -26,7 +26,7 @@ class App extends Component {
       <HashRouter>
         <Routes>
           <Route exact path="/imaging" element={<ImagingPage satcat={this.state.satcat} />} />
-          <Route exact path="/" element={<Home satcat={this.state.satcat} />} />
+          <Route path="/" element={<Home satcat={this.state.satcat} />} />
         </Routes>
       </HashRouter>
     );
