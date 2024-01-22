@@ -7,8 +7,17 @@ import ImageSchedulePage from './pages/image-schedule-page';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 const activeSatellites = JSON.parse(window.localStorage.getItem('activeSatellites'));
+const chaseState = JSON.parse(window.localStorage.getItem('chaseState'));
 if (activeSatellites === null) {
   window.localStorage.setItem('activeSatellites', JSON.stringify([]));
+}
+if (chaseState === null) {
+  window.localStorage.setItem('chaseState', JSON.stringify(
+    {
+      name: "NO SATELLITE SELECTED",
+      epoch: "NO EPOCH",
+    }
+  ))
 }
 
 class App extends Component {

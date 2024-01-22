@@ -5,8 +5,6 @@
   background-color: var(--dark);
   flex-direction: column;
   width: 100%;
-  margin-left: 2%;
-  padding: 2% 2% 2% 2%;
   border-collapse: collapse;
   color: var(--light);
 }
@@ -45,18 +43,15 @@
   height: 100%;
   text-align: center;
   width: 100%;
-  transition: background-color .5s;
 }
 
 #add-img-button:hover {
   background-color: var(--primary);
-  transition: .5s;
 }
 
 #cancel:hover {
   background-color: var(--light);
   border-radius: 50%;
-  transition: background-color .5s;
 }
 
 #cancel {
@@ -64,12 +59,10 @@
   background-color: transparent;
   border-radius: 50%;
   border-color: transparent;
-  transition: background-color .5s;
 }
 
 #delete-img-button:hover {
   background-color: var(--primary);
-  transition: background-color .5s;
 }
 
 #img-table input {
@@ -96,6 +89,7 @@
 }
 
 #export-button {
+  grid-column-start: 2;
   border-radius: 3vh;
   background-color: var(--medium);
   border-style: none;
@@ -103,13 +97,10 @@
   color: var(--light);
   height: 3vh;
   text-align: center;
-  width: 100%;
-  margin-top: 2%;
-  margin-left: 2%;
-  transition: background-color .5s;
+  margin-left: 1%;
+  width: 98%;
 }
 
 #export-button:hover {
   background-color: var(--primary);
-  transition: .5s;
 }

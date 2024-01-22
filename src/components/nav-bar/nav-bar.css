@@ -18,6 +18,13 @@ nav {
   width: 3vh;
 }
 
+.chase-state-div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2%;
+  width: 100%;
+}
+
 .nav-item#satcat {
   background-image: url(../../assets/toolbar-icons/sat-query-icons/sat-query-icon.png);
   background-repeat: no-repeat;

@@ -37,7 +37,6 @@ export class SatQueryWidget extends Component {
     cachedSatellites.forEach((satIndex) => {
       globalSatCat[satIndex].SCENARIO_STATUS = "Active";
     });
-    console.log(cachedSatellites)
     this.setState({satcat: globalSatCat})
   }
 
@@ -134,8 +133,6 @@ export class SatQueryWidget extends Component {
       cachedSatellites.splice(localIndex, 1);
       localStorage.setItem("activeSatellites", JSON.stringify(cachedSatellites));
     }
-    const debug = JSON.parse(localStorage.getItem("activeSatellites"));
-    console.log(debug);
     const queryIndex = this.state.queryResults.findIndex((sat) => sat.NORAD_CAT_ID === satNoradId);
     const querySat = this.state.queryResults[queryIndex];
     querySat.SCENARIO_STATUS = sat.SCENARIO_STATUS;
