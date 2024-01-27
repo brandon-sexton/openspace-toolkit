@@ -4,8 +4,9 @@
 name: Build and deploy Node.js app to Azure Web App - openspace-toolkit
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
     
   workflow_dispatch:
 
